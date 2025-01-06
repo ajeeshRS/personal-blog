@@ -1,9 +1,15 @@
+import { motion } from "motion/react";
 function Footer() {
   return (
     <footer
-      className={`bg-[#FCFCFC] w-full h-fit py-2 text-neutral-500 border-t border-t-gray-100 shadow-md flex flex-col justify-center items-center`}
+      className={`bg-[#FCFCFC] w-full h-fit py-2 font-inter text-neutral-500 border-t border-t-gray-100 shadow-md flex flex-col justify-center items-center`}
     >
-      <p className="font-light">
+      <motion.p
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 100 }}
+        transition={{ duration: 0.6, ease: "easeIn" }}
+        className="font-light"
+      >
         Designed and developed by
         <a
           className="hover:underline px-1"
@@ -11,7 +17,7 @@ function Footer() {
         >
           <span className="underline">ajeesh</span>
         </a>
-      </p>
+      </motion.p>
     </footer>
   );
 }

@@ -13,14 +13,10 @@ function App() {
     <>
       <div className="flex flex-col items-center justify-between min-h-[100vh]">
         <div className="w-full flex flex-col items-start py-20 space-y-3 md:px-80 px-5">
-          <motion.h3
-            className="font-bold font-poppins text-3xl text-neutral-850"
-          >
+          <motion.h3 className="font-bold font-poppins text-3xl text-neutral-850">
             Blogs by ajeesh
           </motion.h3>
-          <motion.p
-            className="text-sm text-neutral-500 font-inter md:w-1/2 "
-          >
+          <motion.p className="text-sm text-neutral-500 font-inter md:w-1/2 ">
             Here, I share solutions to challenges I&apos;ve encountered during
             my software development journey.
           </motion.p>

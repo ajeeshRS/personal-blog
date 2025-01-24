@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import BlogCard from "./components/BlogCard";
 import Footer from "./components/Footer";
 import { motion } from "motion/react";
-import { API } from "./config/axios";
+// import { API } from "./config/axios";
 import { NotebookPen } from "lucide-react";
 
 export interface Blog {
@@ -16,20 +16,21 @@ export interface Blog {
 }
 
 function App() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const blogs: Blog[] = [];
+  // const [blogs, setBlogs] = useState<Blog[]>([]);
 
-  const fetchBlogs = async () => {
-    try {
-      const res = await API.get("/");
-      setBlogs(res.data.blogs);
-    } catch (err) {
-      console.error("error fetching blogs : ", err);
-    }
-  };
+  // const fetchBlogs = async () => {
+  //   try {
+  //     const res = await API.get("/");
+  //     setBlogs(res.data.blogs);
+  //   } catch (err) {
+  //     console.error("error fetching blogs : ", err);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
+  // useEffect(() => {
+  //   fetchBlogs();
+  // }, []);
 
   return (
     <>

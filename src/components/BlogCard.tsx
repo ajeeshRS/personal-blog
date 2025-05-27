@@ -12,7 +12,7 @@ function BlogCard({ blog }: Props) {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "backIn" }}
-      onClick={() => navigate(`/${blog?._id}`)}
+      onClick={() => navigate(`/${blog?._id}`, { state: { blog } })}
       className="w-full flex flex-col items-start justify-start shadow-md p-6 rounded-xl space-y-2 cursor-pointer hover:bg-neutral-50"
     >
       <p className="font-semibold">{blog?.title}</p>

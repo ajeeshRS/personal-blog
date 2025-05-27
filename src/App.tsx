@@ -16,7 +16,34 @@ export interface Blog {
 }
 
 function App() {
-  const blogs: Blog[] = [];
+  // const blogs: Blog[] = [];
+
+  const blogs: Blog[] = [
+    {
+      _id: "1",
+      title:
+        "How I Simplified Node.js + TypeScript Setup with My First NPM Package",
+      blogContent: `
+    <p>Setting up a Node.js app with TypeScript had always been a repetitive task for me. Every time I started a new project, I found myself doing the same steps—configuring <code>tsconfig.json</code>, setting up <code>nodemon</code> or <code>ts-node-dev</code> for live reload, and managing folder structure.</p>
+    <p>To save time, I decided to build a simple NPM package called <strong><code>add-node-ts</code></strong> that could automate this setup. With a single command, it bootstraps a ready-to-go Node.js project with TypeScript, complete with live restart on code changes.</p>
+    <p>I published the package to NPM and kind of forgot about it. But when I checked the package page 3–4 days later, I was surprised to see it had <strong>90 weekly downloads</strong> later 100+. <br/> <img style="width: 300px; height: auto;" src="https://pbs.twimg.com/media/GrYU5UuakAAsxLw?format=png&name=900x900"/> <br/> It felt amazing to know that others found it useful too!</p>
+    <p>Since then, the weekly downloads have stabilized to around <strong>20–25 downloads</strong>, but the experience taught me how impactful even a small utility can be for the developer community. It was also a huge motivation to continue building and sharing tools that solve real problems.</p>
+    <p>If you're tired of repeating the same setup steps for every Node.js + TypeScript project, give <a style={fontWeight:"bold"} href="https://www.npmjs.com/package/add-node-ts">add-node-ts</a> a try!</p>
+  `,
+      tags: [
+        "Node.js",
+        "TypeScript",
+        "NPM",
+        "Developer Tools",
+        "Open Source",
+        "Productivity",
+      ],
+      createdAt: "2025-05-27T09:00:00.000Z",
+      updatedAt: "2025-05-27T09:00:00.000Z",
+      __v: 0,
+    },
+  ];
+
   // const [blogs, setBlogs] = useState<Blog[]>([]);
 
   // const fetchBlogs = async () => {

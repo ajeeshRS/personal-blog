@@ -23,7 +23,7 @@ export default function ViewBlog() {
           {blog?.title}
         </h1>
 
-        <div className="flex gap-2 mb-8">
+        <div className="flex gap-2 mb-8 flex-wrap">
           {blog?.tags.map((tag: string) => (
             <span
               key={tag}

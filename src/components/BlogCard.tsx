@@ -15,13 +15,13 @@ function BlogCard({ blog }: Props) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "backIn" }}
       onClick={() => navigate(`/${blog?._id}`, { state: { blog } })}
-      className="w-full flex items-center justify-between border p-6 space-y-2 cursor-pointer hover:bg-neutral-50"
+      className="w-full flex items-center justify-between border md:p-6 py-6 px-3 space-y-2 cursor-pointer hover:bg-neutral-50"
     >
       
-      <p className="font-crimson text-xl font-semibold text-[#3D7FDC]">
+      <p className="font-crimson md:text-xl text-base font-semibold text-[#3D7FDC]">
         {blog?.title}
       </p>
-       <p className="text-sm text-neutral-400 font-oxygen ">
+       <p className="md:text-sm text-xs text-neutral-400 font-oxygen ">
           {timeAgo(blog?.createdAt as string)}
         </p>
 

@@ -117,7 +117,7 @@ function App() {
 
   return (
     <>
-      <div className="flex items-start space-x-5 h-[100vh]">
+      <div className="flex items-start md:space-x-5 h-[100vh]">
         <aside className="w-[fit] px-16 h-[100vh] md:flex hidden items-center bg-blue-50 ">
           <div className="h-full flex flex-col justify-center">
             <motion.h3 className="font-semibold font-crimson text-3xl text-black flex items-center space-x-2">

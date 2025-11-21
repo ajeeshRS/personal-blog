@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
-import { Blog } from "../App";
 import { useNavigate } from "react-router";
 import { timeAgo } from "../utils/utils";
+import { Blog } from "../assets/blogContent";
 
 interface Props {
   blog: Blog | null;

@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Quill editor custom styles with Tailwind */
+.ql-container {
+  @apply font-sans text-base;
+}
+
+.ql-editor {
+  @apply min-h-[300px] p-4;
+}
+
+.ql-editor.ql-blank::before {
+  @apply italic text-gray-400;
+}
+
+/* Toolbar styling */
+.ql-toolbar {
+  @apply bg-gray-50 border-b border-gray-300;
+}
+
+.ql-toolbar button {
+  @apply hover:bg-gray-200 transition-colors;
+}
+
+.ql-toolbar button.ql-active {
+  @apply bg-blue-100 text-blue-600;
+}
+
+/* Content styling */
+.ql-editor h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.ql-editor h2 {
+  @apply text-2xl font-bold mb-3;
+}
+
+.ql-editor h3 {
+  @apply text-xl font-semibold mb-2;
+}
+
+.ql-editor ul {
+  @apply list-disc list-inside my-3;
+}
+
+.ql-editor ol {
+  @apply list-decimal list-inside my-3;
+}
+
+.ql-editor blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-3 text-gray-700;
+}
+
+.ql-editor code-block {
+  @apply bg-gray-100 p-3 rounded-lg my-3 font-mono text-sm;
+}
+
+.ql-editor a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}

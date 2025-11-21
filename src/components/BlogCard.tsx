@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { Blog } from "../App";
 import { useNavigate } from "react-router";
+import { timeAgo } from "../utils/utils";
+
 interface Props {
   blog: Blog | null;
 }
@@ -13,24 +15,16 @@ function BlogCard({ blog }: Props) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "backIn" }}
       onClick={() => navigate(`/${blog?._id}`, { state: { blog } })}
-      className="w-full flex flex-col items-start justify-start shadow-md p-6 rounded-xl space-y-2 cursor-pointer hover:bg-neutral-50"
+      className="w-full flex items-center justify-between border p-6 space-y-2 cursor-pointer hover:bg-neutral-50"
     >
-      <p className="font-semibold">{blog?.title}</p>
-      <div className="w-full flex flex-wrap gap-2 items-center max-w-[100%]">
-        {blog?.tags.map((t: string, i: number) => (
-          <p
-            className="text-xs bg-neutral-100 rounded-lg px-2 py-1 w-fit"
-            key={i}
-          >
-            {t}
-          </p>
-        ))}
-      </div>
-      <div className="w-full flex justify-end">
-        <p className="text-xs text-neutral-600">
-          Published on {new Date(blog?.createdAt as string).toDateString()}
+      
+      <p className="font-crimson text-xl font-semibold text-[#3D7FDC]">
+        {blog?.title}
+      </p>
+       <p className="text-sm text-neutral-400 font-oxygen ">
+          {timeAgo(blog?.createdAt as string)}
         </p>
-      </div>
+
     </motion.div>
   );
 }

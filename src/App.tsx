@@ -3,7 +3,9 @@ import BlogCard from "./components/BlogCard";
 import Footer from "./components/Footer";
 import { motion } from "motion/react";
 // import { API } from "./config/axios";
-import { NotebookPen } from "lucide-react";
+import { ArrowBigUp } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router";
 
 export interface Blog {
   _id: string;
@@ -22,18 +24,18 @@ function App() {
     {
       _id: "2",
       title:
-        "How I Caught a Malicious Upwork Test Project Before It Did Damage",
+        "Spotting Upwork Scams",
       blogContent: `
                     <p><strong>TL;DR:</strong> I received a "test project" via Upwork that contained obfuscated malicious code. I caught it early, didn't run it, and safely cleaned up my system. Here's how I handled it and how you can protect yourself too.</p>
 
-                <h2>🚩 The Red Flags</h2>
+                <h2>The Red Flags</h2>
                 <ul>
                   <li>Client sent a GitHub repo with vague instructions: "Just run the project and let me know once it's working."</li>
                   <li>Package list included unusual and deprecated packages like <code>request</code>, <code>execp</code>, and <code>fs</code>.</li>
                   <li>A file deep in the backend code had large chunks of obfuscated JavaScript.</li>
                 </ul>
 
-                <h2>🧠 What I Did Immediately</h2>
+                <h2>What I Did Immediately</h2>
                 <ol>
                   <li>Cloned the repo — but <strong>did not run</strong> it blindly.</li>
                   <li>Inspected <code>package.json</code> and removed any suspicious dependencies.</li>
@@ -42,7 +44,7 @@ function App() {
                   <li>Client blocked me on Upwork right after I asked for clarity — which confirmed the suspicion.</li>
                 </ol>
 
-                <h2>🧹 How I Cleaned It Up</h2>
+                <h2>How I Cleaned It Up</h2>
                   <p>
                     -&gt; npm cache clean --force
                   </p>          
@@ -51,7 +53,7 @@ function App() {
                   </p>       
                 <p>This cleared my system’s npm cache to make sure no malicious packages stayed behind. I also deleted the entire project directory.</p>
 
-                <h2>🔐 Lessons for Every Developer</h2>
+                <h2>Lessons for Every Developer</h2>
                 <ul>
                   <li><strong>Always audit a test repo before running it</strong> — especially from unknown clients.</li>
                   <li>If you see encoded strings, obfuscated loops, or unexpected network calls — be suspicious.</li>
@@ -60,7 +62,7 @@ function App() {
                   <li>If something feels off — <strong>trust your gut</strong>.</li>
                 </ul>
 
-                <h2>📢 Spread the Word</h2>
+                <h2>Spread the Word</h2>
                 <p>Freelancers and junior devs are often targeted for these “test projects.” Don’t let curiosity or eagerness override caution.</p>
                 <p>Share this. Help others avoid getting caught by these tactics.</p>
 
@@ -80,7 +82,7 @@ function App() {
     {
       _id: "1",
       title:
-        "How I Simplified Node.js + TypeScript Setup with My First NPM Package",
+        "Node TS Setup Simplified",
       blogContent: `
     <p>Setting up a Node.js app with TypeScript had always been a repetitive task for me. Every time I started a new project, I found myself doing the same steps—configuring <code>tsconfig.json</code>, setting up <code>nodemon</code> or <code>ts-node-dev</code> for live reload, and managing folder structure.</p>
     <p>To save time, I decided to build a simple NPM package called <strong><code>add-node-ts</code></strong> that could automate this setup. With a single command, it bootstraps a ready-to-go Node.js project with TypeScript, complete with live restart on code changes.</p>
@@ -119,15 +121,26 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-between min-h-[100vh]">
-        <div className="w-full flex flex-col items-start py-20 space-y-3 md:px-80 px-5">
-          <motion.h3 className="font-bold font-poppins text-3xl text-neutral-850 flex items-center space-x-2">
-            <NotebookPen className="w-5 h-5" />
-            <span>Blogs by ajeesh</span>
+      <div className="flex items-start space-x-5 h-[100vh]">
+        <aside className="w-[20vw] px-10 h-[100vh] flex items-center bg-blue-50">
+          <div className="h-full flex flex-col justify-center">
+            <motion.h3 className="font-semibold font-crimson text-3xl text-black flex items-center space-x-2">
+              <span>ajeesh</span>
+            </motion.h3>
+            <Link to={"https://x.com/ajeeshRS_"}>
+              <div className="bg-black text-white w-fit flex items-center space-x-1 text-xs font-oxygen font-medium p-1">
+                <FaXTwitter className="w-3 h-3" />
+                <span className="">Follow @ajeeshRS_</span>
+              </div>
+            </Link>
+          </div>
+        </aside>
+        <div className="w-full flex flex-col items-start py-20 space-y-3 md:px-20 max-w-4xl px-5 bg-white h-[100vh] overflow-y-scroll">
+          <motion.h3 className="font-semibold font-crimson text-7xl text-black flex items-center space-x-2">
+            <span>Blogs</span>
           </motion.h3>
-          <motion.p className="text-sm text-neutral-500 font-inter md:w-1/2 ">
-            Here, I share blogs on software development, tech insights, and
-            personal thoughts.
+          <motion.p className="text-md text-neutral-500 font-oxygen md:w-1/2 ">
+             Writing about web2 and web3 stuffs.
           </motion.p>
           <motion.div className="flex flex-col w-full space-y-5 pt-5">
             {blogs?.map((blog) => (
@@ -145,7 +158,7 @@ function App() {
             </div>
           </motion.div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

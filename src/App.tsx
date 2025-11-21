@@ -132,7 +132,7 @@ function App() {
           </div>
         </aside>
         <div className="w-full flex flex-col items-start justify-between py-20 space-y-3 md:px-20 max-w-4xl px-5 bg-white h-[100vh] overflow-y-scroll">
-          <div className="flex w-full flex-col items-start">
+          <div className="flex w-full flex-col items-start space-y-3">
             <motion.h3 className="font-semibold font-crimson text-7xl text-black flex items-center space-x-2">
               <span>Blogs</span>
             </motion.h3>

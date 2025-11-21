@@ -1,9 +1,7 @@
 // import { useEffect, useState } from "react";
 import BlogCard from "./components/BlogCard";
-import Footer from "./components/Footer";
 import { motion } from "motion/react";
 // import { API } from "./config/axios";
-import { ArrowBigUp } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
 
